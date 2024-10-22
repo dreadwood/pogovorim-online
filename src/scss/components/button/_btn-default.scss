@@ -10,19 +10,19 @@
   line-height: 1;
   font-weight: 500;
   text-align: center;
-  color: $color-text-page;
+  color: $color-gray-020;
   text-decoration: none;
-  background-color: $color-accent-additinal;
+  background-color: $color-brilliant-greenish-yellow;
   border: 0;
   border-radius: 0.8rem;
   &[disabled] {
-    color: $color-text-label;
-    background-color: $color-bg-page;
+    color: $color-manatee;
+    background-color: $color-gridperlevy;
     cursor: auto;
   }
   &:not([disabled]):hover,
   &:not([disabled]):focus-visible {
-    background-color: transparentize($color-accent-additinal, 0.2);
+    background-color: transparentize($color-brilliant-greenish-yellow, 0.2);
   }
   @include mobile {
     min-width: auto;

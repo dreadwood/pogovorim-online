@@ -79,7 +79,7 @@
   width: 3.8rem;
   margin: 0;
   padding: 0;
-  color: $color-text-page;
+  color: $color-gray-020;
   background-color: $color-white;
   border: 0;
   border-radius: 0.4rem;
@@ -91,11 +91,11 @@
     fill: currentcolor;
   }
   &[disabled] {
-    color: $color-text-label;
+    color: $color-manatee;
     background-color: transparentize($color-white, 0.3);
   }
   &:not([disabled]):hover,
   &:not([disabled]):focus-visible {
-    background-color: transparentize($color-accent-additinal, 0.3);
+    background-color: transparentize($color-brilliant-greenish-yellow, 0.3);
   }
 }

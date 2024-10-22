@@ -40,7 +40,7 @@
   &.incoming {
     gap: 2.4rem;
     .chat__pic {
-      background-color: $color-accent-additinal;
+      background-color: $color-brilliant-greenish-yellow;
     }
   }
   &.outgoing {
@@ -68,7 +68,7 @@
   aspect-ratio: 1 / 1;
   width: 6rem;
   overflow: hidden;
-  background-color: $color-text-page;
+  background-color: $color-gray-020;
   border-radius: 50%;
   img {
     width: 100%;
@@ -99,7 +99,7 @@
 .chat__spec {
   font-size: 1.2rem;
   line-height: 1;
-  color: $color-text-label;
+  color: $color-manatee;
   letter-spacing: -0.05rem;
 }
 .chat__bubble {
@@ -108,7 +108,7 @@
   font-size: 2.2rem;
   line-height: 3.2rem;
   font-weight: 500;
-  background-color: $color-bg-page;
+  background-color: $color-gridperlevy;
   border-radius: 0 2.2rem 2.2rem 2.2rem;
   @include tablet {
     font-size: 1.8rem;
@@ -149,21 +149,21 @@
   line-height: 3.2rem;
   font-weight: 700;
   text-align: center;
-  color: $color-text-page;
-  background-color: $color-bg-label;
+  color: $color-gray-020;
+  background-color: $color-gridperlevy;
   border: 0;
   border-radius: 2.2rem 0 2.2rem 2.2rem;
   &.dark {
     color: $color-white;
-    background-color: $color-text-page;
+    background-color: $color-gray-020;
     &:not([disabled]):hover,
     &:not([disabled]):focus-visible {
-      background-color: transparentize($color-text-page, 0.1);
+      background-color: transparentize($color-gray-020, 0.1);
     }
   }
   &:not([disabled]):hover,
   &:not([disabled]):focus-visible {
-    background-color: $color-border-chat;
+    background-color: $color-very-pale-blue;
   }
   @include tablet {
     width: 10rem;
@@ -185,7 +185,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 2.4rem 0;
-  border-top: 0.1rem solid $color-border-chat;
+  border-top: 0.1rem solid $color-very-pale-blue;
   @include tablet {
     padding: 2rem 0;
   }
@@ -193,7 +193,7 @@
 .chat__progress {
   font-size: 1.2rem;
   line-height: 1;
-  color: $color-text-label;
+  color: $color-manatee;
   letter-spacing: -0.02rem;
 }
 .chat__steps {
@@ -201,7 +201,7 @@
   font-size: 1.6rem;
   line-height: 1.9rem;
   font-weight: 500;
-  color: $color-text-page;
+  color: $color-gray-020;
   @include mobile {
     margin-top: 0.6rem;
     font-size: 1.4rem;

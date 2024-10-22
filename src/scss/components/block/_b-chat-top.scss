@@ -1,8 +1,8 @@
 .b-chat-top {
   position: relative;
   padding-bottom: 2.4rem;
-  color: $color-text-page;
-  border-bottom: 0.1rem solid $color-border-chat;
+  color: $color-gray-020;
+  border-bottom: 0.1rem solid $color-very-pale-blue;
   border-radius: 1rem;
 }
 .b-chat-top__back {
@@ -31,7 +31,7 @@
   padding: 0.6rem 0.8rem;
   font-size: 1.2rem;
   line-height: 1;
-  color: $color-text-label;
+  color: $color-manatee;
   background-color: $color-white;
   border-radius: 1.2rem;
 }
@@ -45,7 +45,7 @@
   svg {
     flex-shrink: 0;
     width: 1.6rem;
-    fill: $color-accent-additinal;
+    fill: $color-brilliant-greenish-yellow;
     aspect-ratio: 1 / 1;
   }
 }

@@ -2,7 +2,7 @@
   position: relative;
   display: block;
   padding: 2rem 1.6rem;
-  color: $color-text-page;
+  color: $color-gray-020;
   background-color: $color-white;
   border-radius: 2.2rem;
   &.current {
@@ -11,18 +11,18 @@
     }
     .c-progress__label {
       color: $color-white;
-      background-color: $color-text-page;
+      background-color: $color-gray-020;
     }
   }
   &.done {
     color: $color-white;
-    background-color: $color-accent;
+    background-color: $color-crayola-fern;
     .c-progress__icon {
       display: block;
     }
     .c-progress__label {
       color: $color-white;
-      background-color: $color-accent-hover;
+      background-color: $color-pastel-green;
     }
     .c-progress__count {
       color: $color-white;
@@ -36,7 +36,7 @@
   display: none;
   width: calc(100% - 2.4rem * 2);
   height: 0.2rem;
-  background-color: $color-accent-additinal;
+  background-color: $color-brilliant-greenish-yellow;
   border-radius: 0 0 0.2rem 0.2rem;
 }
 .c-progress__icon {
@@ -55,9 +55,9 @@
   padding: 0.6rem 0.8rem;
   font-size: 1.2rem;
   line-height: 1;
-  color: $color-text-label;
+  color: $color-manatee;
   letter-spacing: -0.05rem;
-  background-color: $color-bg-page;
+  background-color: $color-gridperlevy;
   border-radius: 1.2rem;
 }
 .c-progress__name {
@@ -71,6 +71,6 @@
   margin-top: 0.8rem;
   font-size: 1.2rem;
   line-height: 1;
-  color: $color-text-label;
+  color: $color-manatee;
   letter-spacing: -0.05rem;
 }

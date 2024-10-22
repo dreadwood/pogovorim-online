@@ -10,10 +10,10 @@
       display: block;
     }
     .c-block__chart {
-      --c: #{$color-accent};
+      --c: #{$color-crayola-fern};
     }
     .c-block__percent {
-      color: $color-accent;
+      color: $color-crayola-fern;
     }
   }
   @include mobile-big {
@@ -27,7 +27,7 @@
   display: none;
   width: calc(100% - 2.4rem * 2);
   height: 0.2rem;
-  background-color: $color-accent;
+  background-color: $color-crayola-fern;
   border-radius: 0 0 0.2rem 0.2rem;
 }
 .c-block__top {
@@ -48,7 +48,7 @@
 .c-block__chart {
   --p: 20;
   --b: 0.4rem;
-  --c: #{$color-accent-additinal};
+  --c: #{$color-brilliant-greenish-yellow};
   position: absolute;
   inset: 0;
   animation: pie-animation 1s 0.5s both;
@@ -56,7 +56,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    border: 0.4rem solid $color-bg-chart;
+    border: 0.4rem solid $color-periwinkle-crayola;
     border-radius: 50%;
   }
   &::after {
@@ -105,7 +105,7 @@
   svg {
     width: 3.2rem;
     height: 3.2rem;
-    fill: $color-accent-additinal;
+    fill: $color-brilliant-greenish-yellow;
   }
 }
 .c-block__content {
@@ -121,8 +121,8 @@
   padding: 0.6rem 0.8rem;
   font-size: 1.2rem;
   line-height: 1;
-  color: $color-text-label;
-  background-color: $color-bg-label;
+  color: $color-manatee;
+  background-color: $color-gridperlevy;
   border-radius: 1.2rem;
 }
 .c-block__title {
@@ -138,7 +138,7 @@
 }
 .c-block__text {
   margin-top: 2.4rem;
-  color: $color-text-card;
+  color: $color-gray-376;
   @include tablet {
     margin-top: 1.6rem;
   }
