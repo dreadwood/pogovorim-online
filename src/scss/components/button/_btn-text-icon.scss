@@ -18,7 +18,7 @@
   svg {
     aspect-ratio: 1 / 1;
     width: 1.6rem;
-    fill: $color-brilliant-greenish-yellow;
+    fill: var(--btn-text-icon, #{$color-brilliant-greenish-yellow});
   }
   &[disabled] {
     color: $color-manatee;

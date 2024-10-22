@@ -10,11 +10,14 @@ doctype html
 html(lang="ru")
   +head({ title })
   body
-    .page
+    .page(class=logo)
       .page__row
-        a.page__logo.tinkoff(href="/")
-          +svg({ name: logo })
-        img()
+        if logo === "tbank"
+          a.page__logo.tinkoff(href="/")
+            +svg({ name: "/img/logo-tbank.svg" })
+        if logo === "megafon"
+          a.page__logo.megafon(href="/")
+            +svg({ name: "/img/logo-megafon.svg" })
       .page__content
         block content
       .page__row

@@ -48,7 +48,7 @@
 .c-block__chart {
   --p: 20;
   --b: 0.4rem;
-  --c: #{$color-brilliant-greenish-yellow};
+  --c: var(--chart, #{$color-brilliant-greenish-yellow});
   position: absolute;
   inset: 0;
   animation: pie-animation 1s 0.5s both;
@@ -105,7 +105,7 @@
   svg {
     width: 3.2rem;
     height: 3.2rem;
-    fill: $color-brilliant-greenish-yellow;
+    fill: var(--icon-pie, #{$color-brilliant-greenish-yellow});
   }
 }
 .c-block__content {
@@ -121,9 +121,9 @@
   padding: 0.6rem 0.8rem;
   font-size: 1.2rem;
   line-height: 1;
-  color: $color-manatee;
-  background-color: $color-gridperlevy;
-  border-radius: 1.2rem;
+  color: var(--label-color, #{$color-manatee});
+  background-color: var(--label-bg, #{$color-gridperlevy});
+  border-radius: var(--label-radius, 1.2rem);
 }
 .c-block__title {
   @include text-truncate-multiline(2);

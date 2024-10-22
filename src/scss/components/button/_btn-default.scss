@@ -1,5 +1,5 @@
 .btn-default {
-  @include transition(background-color);
+  @include transition(opacity, background-color);
   display: block;
   width: max-content;
   min-width: 21.2rem;
@@ -10,11 +10,11 @@
   line-height: 1;
   font-weight: 500;
   text-align: center;
-  color: $color-gray-020;
+  color: var(--btn-default-color, #{$color-gray-020});
   text-decoration: none;
-  background-color: $color-brilliant-greenish-yellow;
+  background-color: var(--btn-default-bg, #{$color-brilliant-greenish-yellow});
   border: 0;
-  border-radius: 0.8rem;
+  border-radius: var(--btn-default-radius, 0.8rem);
   &[disabled] {
     color: $color-manatee;
     background-color: $color-gridperlevy;
@@ -22,7 +22,8 @@
   }
   &:not([disabled]):hover,
   &:not([disabled]):focus-visible {
-    background-color: transparentize($color-brilliant-greenish-yellow, 0.2);
+    // background-color: transparentize($color-brilliant-greenish-yellow, 0.2);
+    opacity: 0.85;
   }
   @include mobile {
     min-width: auto;

@@ -1,4 +1,6 @@
 .page {
+  // --chart: #{$color-brilliant-greenish-yellow};
+  //
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -6,6 +8,17 @@
   max-width: 124rem + 4rem + 4rem;
   margin: 0 auto;
   padding: 4rem;
+  &.megafon {
+    --chart: #{$color-pigment-green};
+    --icon-pie: #{$color-pigment-green};
+    --btn-text-icon: #{$color-pigment-green};
+    --btn-default-color: #{$color-white};
+    --btn-default-bg: #{$color-pigment-green};
+    --btn-default-radius: 60rem;
+    --label-color: #{$color-white};
+    --label-bg: #{$color-persian-indigo};
+    --label-radius: 0.2rem;
+  }
   @include mobile-big {
     padding: 2rem;
   }
@@ -20,6 +33,10 @@
   margin-left: auto;
   &.tinkoff {
     width: 12.6rem;
+    margin-bottom: auto;
+  }
+  &.megafon {
+    width: 20.7rem;
     margin-bottom: auto;
   }
   &.pogovorim {
