@@ -574,7 +574,7 @@ input[type=file].visually-hidden {
 .btn-default {
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
-  transition-property: background-color;
+  transition-property: opacity, background-color;
   display: block;
   width: -moz-max-content;
   width: max-content;
@@ -586,11 +586,11 @@ input[type=file].visually-hidden {
   line-height: 1;
   font-weight: 500;
   text-align: center;
-  color: #333333;
+  color: var(--btn-default-color, #333333);
   text-decoration: none;
-  background-color: #ffdd2d;
+  background-color: var(--btn-default-bg, #ffdd2d);
   border: 0;
-  border-radius: 0.8rem;
+  border-radius: var(--btn-default-radius, 0.8rem);
 }
 .btn-default[disabled] {
   color: #8e9aa7;
@@ -598,7 +598,7 @@ input[type=file].visually-hidden {
   cursor: auto;
 }
 .btn-default:not([disabled]):hover, .btn-default:not([disabled]):focus-visible {
-  background-color: rgba(255, 221, 45, 0.8);
+  opacity: 0.85;
 }
 @media (max-width: 539px) {
   .btn-default {
@@ -632,7 +632,7 @@ input[type=file].visually-hidden {
 .btn-text-icon svg {
   aspect-ratio: 1/1;
   width: 1.6rem;
-  fill: #ffdd2d;
+  fill: var(--btn-text-icon, #ffdd2d);
 }
 .btn-text-icon[disabled] {
   color: #8e9aa7;
@@ -699,7 +699,7 @@ input[type=file].visually-hidden {
 .c-block__chart {
   --p: 20;
   --b: 0.4rem;
-  --c: #ffdd2d;
+  --c: var(--chart, #ffdd2d);
   position: absolute;
   inset: 0;
   animation: pie-animation 1s 0.5s both;
@@ -755,7 +755,7 @@ input[type=file].visually-hidden {
 .c-block__count svg {
   width: 3.2rem;
   height: 3.2rem;
-  fill: #ffdd2d;
+  fill: var(--icon-pie, #ffdd2d);
 }
 
 .c-block__content {
@@ -775,9 +775,9 @@ input[type=file].visually-hidden {
   padding: 0.6rem 0.8rem;
   font-size: 1.2rem;
   line-height: 1;
-  color: #8e9aa7;
-  background-color: #f6f7f8;
-  border-radius: 1.2rem;
+  color: var(--label-color, #8e9aa7);
+  background-color: var(--label-bg, #f6f7f8);
+  border-radius: var(--label-radius, 1.2rem);
 }
 
 .c-block__title {
@@ -1166,6 +1166,17 @@ input[type=file].visually-hidden {
   margin: 0 auto;
   padding: 4rem;
 }
+.page.megafon {
+  --chart: #00b956;
+  --icon-pie: #00b956;
+  --btn-text-icon: #00b956;
+  --btn-default-color: #ffffff;
+  --btn-default-bg: #00b956;
+  --btn-default-radius: 60rem;
+  --label-color: #ffffff;
+  --label-bg: #731982;
+  --label-radius: 0.2rem;
+}
 @media (max-width: 767px) {
   .page {
     padding: 2rem;
@@ -1184,6 +1195,10 @@ input[type=file].visually-hidden {
 }
 .page__logo.tinkoff {
   width: 12.6rem;
+  margin-bottom: auto;
+}
+.page__logo.megafon {
+  width: 20.7rem;
   margin-bottom: auto;
 }
 .page__logo.pogovorim {
