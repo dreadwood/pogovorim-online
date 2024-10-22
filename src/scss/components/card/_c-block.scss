@@ -1,0 +1,148 @@
+.c-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem 2.4rem;
+  background-color: $color-white;
+  border-radius: 2.2rem;
+  &.done {
+    .c-block__status {
+      display: block;
+    }
+    .c-block__chart {
+      --c: #{$color-accent};
+    }
+    .c-block__percent {
+      color: $color-accent;
+    }
+  }
+  @include mobile-big {
+    padding: 2rem;
+  }
+}
+.c-block__status {
+  position: absolute;
+  top: 0;
+  left: 2.4rem;
+  display: none;
+  width: calc(100% - 2.4rem * 2);
+  height: 0.2rem;
+  background-color: $color-accent;
+  border-radius: 0 0 0.2rem 0.2rem;
+}
+.c-block__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.c-block__progress {
+  position: relative;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  width: 7.2rem;
+  text-align: center;
+  aspect-ratio: 1 / 1;
+}
+.c-block__chart {
+  --p: 20;
+  --b: 0.4rem;
+  --c: #{$color-accent-additinal};
+  position: absolute;
+  inset: 0;
+  animation: pie-animation 1s 0.5s both;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 0.4rem solid $color-bg-chart;
+    border-radius: 50%;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    background: conic-gradient(var(--c) calc(var(--p) * 1%), transparent 0);
+    mask: radial-gradient(
+      farthest-side,
+      #00000000 calc(99% - var(--b)),
+      #000000 calc(100% - var(--b))
+    );
+    border-radius: 50%;
+    inset: 0;
+  }
+}
+
+@property --p {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@keyframes pie-animation {
+  0% {
+    --p: 0;
+  }
+}
+.c-block__percent {
+  padding-top: 0.4rem;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  font-weight: 600;
+}
+.c-block__steps {
+  margin-top: -0.1rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+.c-block__count {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  font-weight: 600;
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+    fill: $color-accent-additinal;
+  }
+}
+.c-block__content {
+  margin-top: 6.3rem;
+  margin-bottom: 3.6rem;
+  @include tablet {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+}
+.c-block__label {
+  width: max-content;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: $color-text-label;
+  background-color: $color-bg-label;
+  border-radius: 1.2rem;
+}
+.c-block__title {
+  @include text-truncate-multiline(2);
+  height: 4.8rem;
+  margin-top: 1.6rem;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+  @include mobile {
+    height: auto;
+  }
+}
+.c-block__text {
+  margin-top: 2.4rem;
+  color: $color-text-card;
+  @include tablet {
+    margin-top: 1.6rem;
+  }
+}
+.c-block__btn {
+  margin-top: auto;
+}

@@ -1,0 +1,76 @@
+.c-progress {
+  position: relative;
+  display: block;
+  padding: 2rem 1.6rem;
+  color: $color-text-page;
+  background-color: $color-white;
+  border-radius: 2.2rem;
+  &.current {
+    .c-progress__status {
+      display: block;
+    }
+    .c-progress__label {
+      color: $color-white;
+      background-color: $color-text-page;
+    }
+  }
+  &.done {
+    color: $color-white;
+    background-color: $color-accent;
+    .c-progress__icon {
+      display: block;
+    }
+    .c-progress__label {
+      color: $color-white;
+      background-color: $color-accent-hover;
+    }
+    .c-progress__count {
+      color: $color-white;
+    }
+  }
+}
+.c-progress__status {
+  position: absolute;
+  top: 0;
+  left: 2.4rem;
+  display: none;
+  width: calc(100% - 2.4rem * 2);
+  height: 0.2rem;
+  background-color: $color-accent-additinal;
+  border-radius: 0 0 0.2rem 0.2rem;
+}
+.c-progress__icon {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  display: none;
+  svg {
+    width: 1.6rem;
+    stroke: currentcolor;
+    aspect-ratio: 1 / 1;
+  }
+}
+.c-progress__label {
+  width: max-content;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: $color-text-label;
+  letter-spacing: -0.05rem;
+  background-color: $color-bg-page;
+  border-radius: 1.2rem;
+}
+.c-progress__name {
+  @include text-truncate;
+  margin-top: 1.8rem;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  font-weight: 500;
+}
+.c-progress__count {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: $color-text-label;
+  letter-spacing: -0.05rem;
+}

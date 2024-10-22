@@ -1,0 +1,23 @@
+extends /elements/layout-page
+include /components/chat
+include /components/block/b-progress-list
+include /components/block/b-chat-top
+
+block data
+  - title = "Поговорим. Чат (Т-банк)"
+  - logo = "/img/logo-tbank.svg"
+
+
+block content
+  .page__chat-top
+    +b-chat-top({
+      name: "Факторы, связанные с деятельностью компании",
+      label: "Блок 1",
+      category: "12 категорий"
+    })
+  .page__chat-progress
+    +b-progress-list({})
+  .page__chat-content
+    +chat({})
+
+block modal

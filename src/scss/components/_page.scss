@@ -1,0 +1,61 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 124rem + 4rem + 4rem;
+  margin: 0 auto;
+  padding: 4rem;
+  @include mobile-big {
+    padding: 2rem;
+  }
+}
+.page__row {
+  display: flex;
+  height: 5rem;
+}
+.page__logo {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  &.tinkoff {
+    width: 12.6rem;
+    margin-bottom: auto;
+  }
+  &.pogovorim {
+    width: 9.6rem;
+    margin-top: auto;
+  }
+}
+.page__content {
+  flex-grow: 1;
+  padding: 2rem 0;
+}
+.page__center {
+  display: grid;
+  height: 100%;
+  place-content: center;
+}
+.page__chat-top {
+  margin-top: 5.6rem;
+  @include tablet {
+    margin-top: 2rem;
+  }
+  @include mobile {
+    margin-top: 1rem;
+  }
+}
+.page__chat-progress {
+  margin-top: 4.6rem;
+  @include mobile {
+    margin-top: 2.6rem;
+    margin-right: -2rem;
+    margin-left: -2rem;
+  }
+}
+.page__chat-content {
+  margin-top: 4.6rem;
+  @include mobile {
+    margin-top: 2.6rem;
+  }
+}

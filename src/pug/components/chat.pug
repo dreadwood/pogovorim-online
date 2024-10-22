@@ -1,0 +1,28 @@
+include /components/button/btn-default
+
+mixin chat({ className })
+  .chat(class=className)
+    .chat__content-wrp
+      .chat__content
+        .chat__msg.incoming
+          .chat__pic
+            img(src="/img/userpic-frank.png")
+          div
+            .chat__msg-top
+              .chat__name Фрэнк Ансвер
+              .chat__spec HR-специалист
+            .chat__bubble Сталкиваетесь ли вы с нехваткой технических или организационных ресурсов для выполнения своей работы?
+        .chat__msg.outgoing
+          .chat__pic
+            img(src="/img/userpic-riley.png")
+          div
+            .chat__msg-top
+              .chat__name Ваш ответ
+            .chat__answer-list
+              button.chat__answer.dark Да
+              button.chat__answer Нет
+    .chat__bottom
+      .chat__progress
+        | Номер вопроса
+        .chat__steps 4 из 8
+      +btn-default({ text: "Следующий вопрос" })

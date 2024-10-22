@@ -1,0 +1,14 @@
+include /components/button/btn-text-icon
+
+mixin c-progress({ label, name, count, isDone, isCurrent, className })
+  arrticle.c-progress(
+    class=isDone && "done"
+    class=isCurrent && "current"
+    class=className
+  )
+    .c-progress__status
+    .c-progress__icon
+      +svg({ name: "check", width: 16, height: 16 })
+    .c-progress__label=label
+    .c-progress__name=name
+    .c-progress__count=count

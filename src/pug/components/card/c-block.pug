@@ -1,0 +1,26 @@
+include /components/button/btn-text-icon
+
+mixin c-block({ progressPercent, progressSteps, isDone, category, labelText, cardTitle, cardText, btnText, isBtnDisabled, className })
+  arrticle.c-block(class=isDone && "done" class=className)
+    .c-block__status
+    .c-block__top
+      .c-block__progress
+        .c-block__chart(style=`--p: ${progressPercent}`)
+        .c-block__percent #{progressPercent}%
+        .c-block__steps=progressSteps
+      .c-block__count
+        +svg({ name: "graph" })
+        span=category
+    .c-block__content
+      .c-block__label=labelText
+      .c-block__title=cardTitle
+      .c-block__text=cardText
+    .c-block__btn
+      if isDone
+        +btn-text-icon({
+          icon: "pen",
+          text: btnText,
+          isDisabled: isBtnDisabled
+        })
+      else
+        button.btn-default(disabled=isBtnDisabled)=btnText

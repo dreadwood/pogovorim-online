@@ -1,0 +1,12 @@
+include /components/button/btn-back
+
+mixin b-chat-top({ name, label, category, className })
+  .b-chat-top(class=className)
+    .b-chat-top__back
+      +btn-back({ text: "Вернуться назад" })
+    .b-chat-top__name=name
+    .b-chat-top__bottom
+      .b-chat-top__label=label
+      .b-chat-top__category
+        +svg({ name: "graph", width: 16, height: 16 })
+        span=category

@@ -1,0 +1,4 @@
+mixin btn-text-icon({ icon, text, isDisabled, className })
+  button.btn-text-icon(class=className disabled=isDisabled)
+    +svg({ name: icon, width: 16, height: 16 })
+    span=text

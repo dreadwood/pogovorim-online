@@ -1,0 +1,60 @@
+extends ../elements/layout-index
+
+block data
+  -
+    title = "Поговорим"
+
+    let pagesPogovorim = [
+      { name: "Поговорим Старт (Т-Банк)", url: "start-tbank-page.html" },
+      { name: "Поговорим Чат (Т-Банк)", url: "chat-tbank-page.html" },
+      { name: "UI", url: "ui-page.html" }
+    ]
+
+
+block content
+  mixin page-list({list})
+    ul
+      each it in list
+        li #[a(href=it.url)=it.name]
+  style.
+    html {
+      font-size: 10px;
+    }
+    body {
+      --color-main: #65be74;
+      --color-bg: #ffffff;
+      --color-text: #333333;
+      padding: 2rem 4rem;
+      font-family: sans-serif;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      font-weight: 400;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+    }
+    h1 {
+      color: var(--color-main);
+    }
+    ul,
+    ol {
+      margin-top: 0;
+    }
+    li {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:visited {
+      color: var(--color-text);
+    }
+    a:hover,
+    a:focus {
+      color: var(--color-main);
+    }
+
+  h1=title
+
+  h2 Pages
+  +page-list({ list: pagesPogovorim })

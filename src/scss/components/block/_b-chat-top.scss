@@ -1,0 +1,51 @@
+.b-chat-top {
+  position: relative;
+  padding-bottom: 2.4rem;
+  color: $color-text-page;
+  border-bottom: 0.1rem solid $color-border-chat;
+  border-radius: 1rem;
+}
+.b-chat-top__back {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  translate: -13.5rem 0;
+  @include desktop-big {
+    position: static;
+    translate: 0;
+    margin-bottom: 1rem;
+  }
+}
+.b-chat-top__name {
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  font-weight: 600;
+}
+.b-chat-top__bottom {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 1.4rem;
+}
+.b-chat-top__label {
+  padding: 0.6rem 0.8rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: $color-text-label;
+  background-color: $color-white;
+  border-radius: 1.2rem;
+}
+.b-chat-top__category {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+  svg {
+    flex-shrink: 0;
+    width: 1.6rem;
+    fill: $color-accent-additinal;
+    aspect-ratio: 1 / 1;
+  }
+}

@@ -1,0 +1,5 @@
+mixin btn-back({ text, className })
+  button.btn-back(class=className)
+    .btn-back__icon
+      +svg({ name: "arrow-back", width: 16, height: 16 })
+    span=text

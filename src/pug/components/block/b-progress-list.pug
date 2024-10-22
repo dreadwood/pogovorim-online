@@ -1,0 +1,14 @@
+include /components/card/c-progress
+
+mixin b-progress-list({ className })
+  .b-progress-list.swiper.js-progress-slider(class=className data-initial-slide="2")
+    .b-progress-list__wrp.swiper-wrapper
+      include /data/cards-progress
+      each it in cardsProgress
+        .b-progress-list__item.swiper-slide
+          +c-progress(it)
+    .b-progress-list__controls
+      button.b-progress-list__btn.swiper-button-prev
+        +svg({ name: "arrow-prev-small", width: 20, height: 20 })
+      button.b-progress-list__btn.swiper-button-next
+        +svg({ name: "arrow-next-small", width: 20, height: 20 })

@@ -1,0 +1,24 @@
+include /elements/head
+include /elements/images
+
+- let title = ""
+- let logo = ""
+
+block data
+
+doctype html
+html(lang="ru")
+  +head({ title })
+  body
+    .page
+      .page__row
+        a.page__logo.tinkoff(href="/")
+          +svg({ name: logo })
+        img()
+      .page__content
+        block content
+      .page__row
+        a.page__logo.pogovorim(href="#")
+          +svg({ name: "/img/logo-pogovorim.svg" })
+    block modal
+    include /elements/script
