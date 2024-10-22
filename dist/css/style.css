@@ -431,7 +431,7 @@ input[type=file].visually-hidden {
 .b-chat-top__category svg {
   flex-shrink: 0;
   width: 1.6rem;
-  fill: #ffdd2d;
+  fill: var(--icon-pie-fill, #ffdd2d);
   aspect-ratio: 1/1;
 }
 
@@ -524,7 +524,7 @@ input[type=file].visually-hidden {
   background-color: rgba(255, 255, 255, 0.7);
 }
 .b-progress-list__btn:not([disabled]):hover, .b-progress-list__btn:not([disabled]):focus-visible {
-  background-color: rgba(255, 221, 45, 0.7);
+  background-color: rgba(142, 154, 167, 0.1);
 }
 
 .btn-back {
@@ -590,7 +590,7 @@ input[type=file].visually-hidden {
   text-decoration: none;
   background-color: var(--btn-default-bg, #ffdd2d);
   border: 0;
-  border-radius: var(--btn-default-radius, 0.8rem);
+  border-radius: 0.8rem;
 }
 .btn-default[disabled] {
   color: #8e9aa7;
@@ -599,6 +599,9 @@ input[type=file].visually-hidden {
 }
 .btn-default:not([disabled]):hover, .btn-default:not([disabled]):focus-visible {
   opacity: 0.85;
+}
+.btn-default.rounded {
+  border-radius: 60rem;
 }
 @media (max-width: 539px) {
   .btn-default {
@@ -657,7 +660,7 @@ input[type=file].visually-hidden {
   display: block;
 }
 .c-block.done .c-block__chart {
-  --c: #65be74;
+  --c: var(--chart-fill, #65be74);
 }
 .c-block.done .c-block__percent {
   color: #65be74;
@@ -675,7 +678,7 @@ input[type=file].visually-hidden {
   display: none;
   width: calc(100% - 4.8rem);
   height: 0.2rem;
-  background-color: #65be74;
+  background-color: var(--status-bg, #65be74);
   border-radius: 0 0 0.2rem 0.2rem;
 }
 
@@ -699,7 +702,7 @@ input[type=file].visually-hidden {
 .c-block__chart {
   --p: 20;
   --b: 0.4rem;
-  --c: var(--chart, #ffdd2d);
+  --c: var(--chart-fill, #ffdd2d);
   position: absolute;
   inset: 0;
   animation: pie-animation 1s 0.5s both;
@@ -755,7 +758,7 @@ input[type=file].visually-hidden {
 .c-block__count svg {
   width: 3.2rem;
   height: 3.2rem;
-  fill: var(--icon-pie, #ffdd2d);
+  fill: var(--icon-pie-fill, #ffdd2d);
 }
 
 .c-block__content {
@@ -824,18 +827,18 @@ input[type=file].visually-hidden {
 }
 .c-progress.current .c-progress__label {
   color: #ffffff;
-  background-color: #333333;
+  background-color: var(--label-bg, #333333);
 }
 .c-progress.done {
   color: #ffffff;
-  background-color: #65be74;
+  background-color: var(--c-progress-bg, #65be74);
 }
 .c-progress.done .c-progress__icon {
   display: block;
 }
 .c-progress.done .c-progress__label {
   color: #ffffff;
-  background-color: #77d186;
+  background-color: var(--c-progress-label-bg, #77d186);
 }
 .c-progress.done .c-progress__count {
   color: #ffffff;
@@ -848,7 +851,7 @@ input[type=file].visually-hidden {
   display: none;
   width: calc(100% - 4.8rem);
   height: 0.2rem;
-  background-color: #ffdd2d;
+  background-color: var(--status-bg, #ffdd2d);
   border-radius: 0 0 0.2rem 0.2rem;
 }
 
@@ -955,7 +958,7 @@ input[type=file].visually-hidden {
   gap: 2.4rem;
 }
 .chat__msg.incoming .chat__pic {
-  background-color: #ffdd2d;
+  background-color: var(--chat-pig-incoming-bg, #ffdd2d);
 }
 .chat__msg.outgoing {
   gap: 0.7rem;
@@ -984,7 +987,7 @@ input[type=file].visually-hidden {
   aspect-ratio: 1/1;
   width: 6rem;
   overflow: hidden;
-  background-color: #333333;
+  background-color: var(--chat-pig-bg, #333333);
   border-radius: 50%;
 }
 .chat__pic img {
@@ -1075,7 +1078,7 @@ input[type=file].visually-hidden {
 .chat__answer {
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
-  transition-property: color, background-color;
+  transition-property: color, background-color, opacity;
   display: grid;
   flex-shrink: 0;
   place-items: center;
@@ -1095,10 +1098,11 @@ input[type=file].visually-hidden {
 }
 .chat__answer.dark {
   color: #ffffff;
-  background-color: #333333;
+  background-color: var(--chat-answer-bg, #333333);
 }
 .chat__answer.dark:not([disabled]):hover, .chat__answer.dark:not([disabled]):focus-visible {
-  background-color: rgba(51, 51, 51, 0.9);
+  background-color: var(--chat-answer-bg, #333333);
+  opacity: 0.85;
 }
 .chat__answer:not([disabled]):hover, .chat__answer:not([disabled]):focus-visible {
   background-color: #eceef0;
@@ -1167,15 +1171,20 @@ input[type=file].visually-hidden {
   padding: 4rem;
 }
 .page.megafon {
-  --chart: #00b956;
-  --icon-pie: #00b956;
+  --status-bg: #00b956;
+  --chart-fill: #00b956;
+  --icon-pie-fill: #00b956;
   --btn-text-icon: #00b956;
   --btn-default-color: #ffffff;
   --btn-default-bg: #00b956;
-  --btn-default-radius: 60rem;
   --label-color: #ffffff;
   --label-bg: #731982;
   --label-radius: 0.2rem;
+  --c-progress-bg: #00b956;
+  --c-progress-label-bg: #0dc161;
+  --chat-pig-bg: #731982;
+  --chat-pig-incoming-bg: #00b956;
+  --chat-answer-bg: #731982;
 }
 @media (max-width: 767px) {
   .page {
