@@ -14,7 +14,7 @@
   text-decoration: none;
   background-color: var(--btn-default-bg, #{$color-brilliant-greenish-yellow});
   border: 0;
-  border-radius: var(--btn-default-radius, 0.8rem);
+  border-radius: 0.8rem;
   &[disabled] {
     color: $color-manatee;
     background-color: $color-gridperlevy;
@@ -24,6 +24,9 @@
   &:not([disabled]):focus-visible {
     // background-color: transparentize($color-brilliant-greenish-yellow, 0.2);
     opacity: 0.85;
+  }
+  &.rounded {
+    border-radius: 60rem;
   }
   @include mobile {
     min-width: auto;

@@ -96,6 +96,6 @@
   }
   &:not([disabled]):hover,
   &:not([disabled]):focus-visible {
-    background-color: transparentize($color-brilliant-greenish-yellow, 0.3);
+    background-color: transparentize($color-manatee, 0.9);
   }
 }

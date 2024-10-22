@@ -1,6 +1,4 @@
 .page {
-  // --chart: #{$color-brilliant-greenish-yellow};
-  //
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -9,15 +7,20 @@
   margin: 0 auto;
   padding: 4rem;
   &.megafon {
-    --chart: #{$color-pigment-green};
-    --icon-pie: #{$color-pigment-green};
+    --status-bg: #{$color-pigment-green};
+    --chart-fill: #{$color-pigment-green};
+    --icon-pie-fill: #{$color-pigment-green};
     --btn-text-icon: #{$color-pigment-green};
     --btn-default-color: #{$color-white};
     --btn-default-bg: #{$color-pigment-green};
-    --btn-default-radius: 60rem;
     --label-color: #{$color-white};
     --label-bg: #{$color-persian-indigo};
     --label-radius: 0.2rem;
+    --c-progress-bg: #{$color-pigment-green};
+    --c-progress-label-bg: #{$color-malachite};
+    --chat-pig-bg: #{$color-persian-indigo};
+    --chat-pig-incoming-bg: #{$color-pigment-green};
+    --chat-answer-bg: #{$color-persian-indigo};
   }
   @include mobile-big {
     padding: 2rem;

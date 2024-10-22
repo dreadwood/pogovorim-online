@@ -11,18 +11,18 @@
     }
     .c-progress__label {
       color: $color-white;
-      background-color: $color-gray-020;
+      background-color: var(--label-bg, #{$color-gray-020});
     }
   }
   &.done {
     color: $color-white;
-    background-color: $color-crayola-fern;
+    background-color: var(--c-progress-bg, #{$color-crayola-fern});
     .c-progress__icon {
       display: block;
     }
     .c-progress__label {
       color: $color-white;
-      background-color: $color-pastel-green;
+      background-color: var(--c-progress-label-bg, #{$color-pastel-green});
     }
     .c-progress__count {
       color: $color-white;
@@ -36,7 +36,7 @@
   display: none;
   width: calc(100% - 2.4rem * 2);
   height: 0.2rem;
-  background-color: $color-brilliant-greenish-yellow;
+  background-color: var(--status-bg, #{$color-brilliant-greenish-yellow});
   border-radius: 0 0 0.2rem 0.2rem;
 }
 .c-progress__icon {

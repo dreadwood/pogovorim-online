@@ -45,7 +45,7 @@
   svg {
     flex-shrink: 0;
     width: 1.6rem;
-    fill: $color-brilliant-greenish-yellow;
+    fill: var(--icon-pie-fill, #{$color-brilliant-greenish-yellow});
     aspect-ratio: 1 / 1;
   }
 }

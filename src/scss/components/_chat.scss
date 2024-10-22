@@ -40,7 +40,10 @@
   &.incoming {
     gap: 2.4rem;
     .chat__pic {
-      background-color: $color-brilliant-greenish-yellow;
+      background-color: var(
+        --chat-pig-incoming-bg,
+        #{$color-brilliant-greenish-yellow}
+      );
     }
   }
   &.outgoing {
@@ -68,7 +71,7 @@
   aspect-ratio: 1 / 1;
   width: 6rem;
   overflow: hidden;
-  background-color: $color-gray-020;
+  background-color: var(--chat-pig-bg, #{$color-gray-020});
   border-radius: 50%;
   img {
     width: 100%;
@@ -136,7 +139,7 @@
   }
 }
 .chat__answer {
-  @include transition(color, background-color);
+  @include transition(color, background-color, opacity);
   display: grid;
   flex-shrink: 0;
   place-items: center;
@@ -155,10 +158,11 @@
   border-radius: 2.2rem 0 2.2rem 2.2rem;
   &.dark {
     color: $color-white;
-    background-color: $color-gray-020;
+    background-color: var(--chat-answer-bg, #{$color-gray-020});
     &:not([disabled]):hover,
     &:not([disabled]):focus-visible {
-      background-color: transparentize($color-gray-020, 0.1);
+      background-color: var(--chat-answer-bg, #{$color-gray-020});
+      opacity: 0.85;
     }
   }
   &:not([disabled]):hover,

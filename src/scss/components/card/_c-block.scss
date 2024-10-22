@@ -10,7 +10,7 @@
       display: block;
     }
     .c-block__chart {
-      --c: #{$color-crayola-fern};
+      --c: var(--chart-fill, #{$color-crayola-fern});
     }
     .c-block__percent {
       color: $color-crayola-fern;
@@ -27,7 +27,7 @@
   display: none;
   width: calc(100% - 2.4rem * 2);
   height: 0.2rem;
-  background-color: $color-crayola-fern;
+  background-color: var(--status-bg, #{$color-crayola-fern});
   border-radius: 0 0 0.2rem 0.2rem;
 }
 .c-block__top {
@@ -48,7 +48,7 @@
 .c-block__chart {
   --p: 20;
   --b: 0.4rem;
-  --c: var(--chart, #{$color-brilliant-greenish-yellow});
+  --c: var(--chart-fill, #{$color-brilliant-greenish-yellow});
   position: absolute;
   inset: 0;
   animation: pie-animation 1s 0.5s both;
@@ -105,7 +105,7 @@
   svg {
     width: 3.2rem;
     height: 3.2rem;
-    fill: var(--icon-pie, #{$color-brilliant-greenish-yellow});
+    fill: var(--icon-pie-fill, #{$color-brilliant-greenish-yellow});
   }
 }
 .c-block__content {
