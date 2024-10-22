@@ -1,7 +1,7 @@
 # build output
 dist-ssr
 dist.zip
-dist
+# dist
 *.local
 
 # generated types
