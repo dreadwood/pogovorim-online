@@ -12,14 +12,6 @@
     width: 20.8rem;
     height: 100%;
   }
-  &::before {
-    left: 0;
-    background: linear-gradient(
-      90deg,
-      #f6f7f8 32.61%,
-      rgb(246 247 248 / 0%) 100%
-    );
-  }
   &::after {
     right: 0;
     background: linear-gradient(
@@ -52,8 +44,11 @@
 .b-progress-list__item {
   flex-shrink: 0;
   width: 29.5rem;
-  &:not(:last-child) {
-    margin-right: 2rem;
+  // &:not(:last-child) {
+  //   margin-right: 2rem;
+  // }
+  &:last-child {
+    // margin-right: 0 !important;
   }
   @include mobile {
     width: 24rem;
