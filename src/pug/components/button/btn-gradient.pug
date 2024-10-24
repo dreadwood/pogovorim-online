@@ -1,0 +1,7 @@
+mixin btn-gradient({ text, type, isDisabled, className })
+  button.btn-gradient(
+    class=className
+    type=type || "button"
+    disabled=isDisabled
+  )
+    span=text

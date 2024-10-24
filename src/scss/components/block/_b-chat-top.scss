@@ -4,6 +4,9 @@
   color: $color-gray-020;
   border-bottom: 0.1rem solid $color-very-pale-blue;
   border-radius: 1rem;
+  @include desktop-big {
+    padding-left: 3.6rem;
+  }
 }
 .b-chat-top__back {
   position: absolute;
@@ -11,26 +14,32 @@
   right: 100%;
   translate: -13.5rem 0;
   @include desktop-big {
-    position: static;
+    left: 0;
     translate: 0;
-    margin-bottom: 1rem;
   }
 }
 .b-chat-top__name {
   font-size: 2.4rem;
   line-height: 2.9rem;
   font-weight: 600;
+  @include mobile-big {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+  }
 }
 .b-chat-top__bottom {
   display: flex;
   align-items: center;
   gap: 1.6rem;
   margin-top: 1.4rem;
+  @include mobile-big {
+    margin-top: 1.2rem;
+  }
 }
 .b-chat-top__label {
   padding: 0.6rem 0.8rem;
   font-size: 1.2rem;
-  line-height: 1;
+  line-height: 1.2rem;
   color: $color-manatee;
   background-color: $color-white;
   border-radius: 1.2rem;

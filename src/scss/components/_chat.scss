@@ -8,19 +8,19 @@
     padding: 0 3rem;
   }
   @include mobile-big {
-    padding: 0 2rem;
+    padding: 0 1.8rem;
   }
 }
 .chat__content-wrp {
   @include hide-scroll;
   flex-grow: 1;
-  padding: 5.6rem 0;
+  padding-top: 5.6rem;
   overflow-y: scroll;
   @include tablet {
-    padding: 3rem 0;
+    padding-top: 3rem;
   }
   @include mobile {
-    padding: 2rem 0;
+    padding-top: 2.4rem;
   }
 }
 .chat__content {
@@ -28,159 +28,17 @@
   flex-direction: column;
   align-items: start;
   gap: 4rem;
-  @include mobile {
-    gap: 2rem;
-  }
-}
-.chat__msg {
-  display: flex;
-  align-items: flex-start;
-  width: max-content;
-  max-width: 56%;
-  &.incoming {
-    gap: 2.4rem;
-    .chat__pic {
-      background-color: var(
-        --chat-pig-incoming-bg,
-        #{$color-brilliant-greenish-yellow}
-      );
-    }
-  }
-  &.outgoing {
-    gap: 0.7rem;
-    margin-left: auto;
-    .chat__pic {
-      order: 1;
-    }
-    .chat__msg-top {
-      justify-content: flex-end;
-    }
+  padding-bottom: 5.6rem;
+  .msg {
+    max-width: 68%;
   }
   @include tablet {
-    max-width: 90%;
-    &.incoming {
-      gap: 1rem;
-    }
-    &.outgoing {
-      gap: 1rem;
+    .msg {
+      max-width: 100%;
     }
   }
-}
-.chat__pic {
-  flex-shrink: 0;
-  aspect-ratio: 1 / 1;
-  width: 6rem;
-  overflow: hidden;
-  background-color: var(--chat-pig-bg, #{$color-gray-020});
-  border-radius: 50%;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
   @include mobile {
-    width: 3.4rem;
-  }
-}
-.chat__msg-top {
-  display: flex;
-  align-items: baseline;
-  gap: 1.6rem;
-  @include mobile {
-    gap: 1rem;
-  }
-}
-.chat__name {
-  font-size: 1.6rem;
-  line-height: 1.9rem;
-  font-weight: 500;
-  @include mobile {
-    font-size: 1.4rem;
-    line-height: 1.6rem;
-  }
-}
-.chat__spec {
-  font-size: 1.2rem;
-  line-height: 1;
-  color: $color-manatee;
-  letter-spacing: -0.05rem;
-}
-.chat__bubble {
-  margin-top: 1.2rem;
-  padding: 2rem 2rem 2rem 2.4rem;
-  font-size: 2.2rem;
-  line-height: 3.2rem;
-  font-weight: 500;
-  background-color: $color-gridperlevy;
-  border-radius: 0 2.2rem 2.2rem 2.2rem;
-  @include tablet {
-    font-size: 1.8rem;
-    line-height: 2.6rem;
-  }
-  @include mobile-big {
-    padding: 1.8rem;
-    font-size: 1.6rem;
-    line-height: 2.2rem;
-  }
-  @include mobile {
-    margin-top: 0.8rem;
-    padding: 1.4rem;
-    font-size: 1.4rem;
-    line-height: 2rem;
-  }
-}
-.chat__answer-list {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-top: 1.2rem;
-  @include mobile {
-    margin-top: 0.8rem;
-  }
-}
-.chat__answer {
-  @include transition(color, background-color, opacity);
-  display: grid;
-  flex-shrink: 0;
-  place-items: center;
-  width: 13.1rem;
-  height: 8rem;
-  margin: 0;
-  padding: 0;
-  font-family: $font-default;
-  font-size: 2.2rem;
-  line-height: 3.2rem;
-  font-weight: 700;
-  text-align: center;
-  color: $color-gray-020;
-  background-color: $color-gridperlevy;
-  border: 0;
-  border-radius: 2.2rem 0 2.2rem 2.2rem;
-  &.dark {
-    color: $color-white;
-    background-color: var(--chat-answer-bg, #{$color-gray-020});
-    &:not([disabled]):hover,
-    &:not([disabled]):focus-visible {
-      background-color: var(--chat-answer-bg, #{$color-gray-020});
-      opacity: 0.85;
-    }
-  }
-  &:not([disabled]):hover,
-  &:not([disabled]):focus-visible {
-    background-color: $color-very-pale-blue;
-  }
-  @include tablet {
-    width: 10rem;
-    height: 6rem;
-    font-size: 1.8rem;
-    line-height: 2.6rem;
-  }
-  @include mobile {
-    width: 8rem;
-    height: 4rem;
-    font-size: 1.4rem;
-    line-height: 2rem;
-    border-radius: 1.4rem 0 1.4rem 1.4rem;
+    padding-bottom: 4rem;
   }
 }
 .chat__bottom {
@@ -190,15 +48,12 @@
   align-items: center;
   padding: 2.4rem 0;
   border-top: 0.1rem solid $color-very-pale-blue;
-  @include tablet {
-    padding: 2rem 0;
-  }
 }
 .chat__progress {
   font-size: 1.2rem;
-  line-height: 1;
+  line-height: 1.2rem;
   color: $color-manatee;
-  letter-spacing: -0.02rem;
+  letter-spacing: -0.05rem;
 }
 .chat__steps {
   margin-top: 1.2rem;
@@ -206,8 +61,8 @@
   line-height: 1.9rem;
   font-weight: 500;
   color: $color-gray-020;
-  @include mobile {
-    margin-top: 0.6rem;
+  @include mobile-big {
+    margin-top: 1.2rem;
     font-size: 1.4rem;
     line-height: 1.6rem;
   }

@@ -1,0 +1,13 @@
+mixin f-field({ value, label, name, type, isDisabled, isRequired, className })
+  .f-field
+    input.f-field__input(
+      class=className
+      type=(type || "text")
+      id=name
+      name=name
+      value=value
+      placeholder=""
+      required=isRequired
+      disabled=isDisabled
+    )
+    label.f-field__label(for=name)=label

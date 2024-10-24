@@ -1,81 +1,129 @@
 .page {
+  height: 100%;
+  background-color: var(--page-bg, #{$color-periwinkle-crayola});
+  &.tbank {
+    --page-bg: #{$color-gridperlevy};
+    //
+    --btn-default-color: #{$color-gray-020};
+    --btn-default-bg: #{$color-brilliant-greenish-yellow};
+    //
+    --c-progress-done-bg: #{$color-crayola-fern};
+    --c-progress-label-done-bg: #{$color-pastel-green};
+    --c-progress-label-actv-bg: #{$color-gray-020};
+    --c-progress-status: #{$color-brilliant-greenish-yellow};
+    //
+    --msg-pig-in-bg: #{$color-brilliant-greenish-yellow};
+    --msg-pig-out-bg: #{$color-gray-020};
+    --msg-bubble-bg: #{$color-gridperlevy};
+    --msg-bubble-accent-color: #{$color-white};
+    --msg-bubble-accent-bg: #{$color-gray-020};
+  }
+  &.megafon {
+    --page-bg: #{$color-gridperlevy};
+    //
+    --btn-default-color: #{$color-white};
+    --btn-default-bg: #{$color-pigment-green};
+    //
+    --c-progress-done-bg: #{$color-pigment-green};
+    --c-progress-label-done-bg: #{$color-malachite};
+    --c-progress-label-actv-bg: #{$color-persian-indigo};
+    --c-progress-status: #{$color-pigment-green};
+    //
+    --msg-pig-in-bg: #{$color-pigment-green};
+    --msg-pig-out-bg: #{$color-persian-indigo};
+    --msg-bubble-bg: #{$color-gridperlevy};
+    --msg-bubble-accent-color: #{$color-white};
+    --msg-bubble-accent-bg: #{$color-persian-indigo};
+    //
+    --status-bg: #{$color-pigment-green};
+    --chart-fill: #{$color-pigment-green};
+    --icon-pie-fill: #{$color-pigment-green};
+    --btn-text-icon: #{$color-pigment-green};
+    --label-color: #{$color-white};
+    --label-bg: #{$color-persian-indigo};
+    --label-radius: 0.2rem;
+  }
+}
+.page__wrp {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   max-width: 124rem + 4rem + 4rem;
   margin: 0 auto;
-  padding: 4rem;
-  &.megafon {
-    --status-bg: #{$color-pigment-green};
-    --chart-fill: #{$color-pigment-green};
-    --icon-pie-fill: #{$color-pigment-green};
-    --btn-text-icon: #{$color-pigment-green};
-    --btn-default-color: #{$color-white};
-    --btn-default-bg: #{$color-pigment-green};
-    --label-color: #{$color-white};
-    --label-bg: #{$color-persian-indigo};
-    --label-radius: 0.2rem;
-    --c-progress-bg: #{$color-pigment-green};
-    --c-progress-label-bg: #{$color-malachite};
-    --chat-pig-bg: #{$color-persian-indigo};
-    --chat-pig-incoming-bg: #{$color-pigment-green};
-    --chat-answer-bg: #{$color-persian-indigo};
-  }
+  padding: 4rem 0 2.4rem 0;
   @include mobile-big {
-    padding: 2rem;
+    padding: 2.4rem 0 1.6rem 0;
   }
 }
-.page__row {
+.page__head {
   display: flex;
-  height: 5rem;
+  justify-content: center;
 }
 .page__logo {
   display: block;
-  margin-right: auto;
-  margin-left: auto;
+  width: 12.3rem;
   &.tinkoff {
     width: 12.6rem;
-    margin-bottom: auto;
   }
   &.megafon {
     width: 20.7rem;
-    margin-bottom: auto;
-  }
-  &.pogovorim {
-    width: 9.6rem;
-    margin-top: auto;
   }
 }
 .page__content {
   flex-grow: 1;
-  padding: 2rem 0;
+  // padding: 2rem 0;
+  padding: 1.852vh 0;
+  @include tablet {
+    padding: 2.6rem 0;
+  }
+}
+.page__bottom {
+  display: flex;
+  justify-content: center;
+}
+.page__link {
+  @include transition(color);
+  width: max-content;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  color: $color-gray-376;
+  &:hover,
+  &:focus-visible {
+    color: $color-green-jungle-crayola;
+  }
 }
 .page__center {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  place-content: center;
 }
 .page__chat-top {
-  margin-top: 5.6rem;
+  // margin-top: 5.6rem;
+  margin-top: 5.185vh;
   @include tablet {
-    margin-top: 2rem;
+    // margin-top: 2.6rem;
+    margin-top: 0;
   }
-  @include mobile {
-    margin-top: 1rem;
+  @include mobile-big {
+    padding-right: 1.8rem;
+    padding-left: 1.8rem;
   }
 }
 .page__chat-progress {
-  margin-top: 4.6rem;
+  // margin-top: 4.6rem;
+  margin-top: 4.259vh;
   @include mobile {
-    margin-top: 2.6rem;
-    margin-right: -2rem;
-    margin-left: -2rem;
+    margin-top: 2.4rem;
   }
 }
 .page__chat-content {
-  margin-top: 4.6rem;
+  // margin-top: 4.6rem;
+  margin-top: 4.259vh;
   @include mobile {
-    margin-top: 2.6rem;
+    margin-top: 2.4rem;
   }
 }

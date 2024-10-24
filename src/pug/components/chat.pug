@@ -1,28 +1,37 @@
 include /components/button/btn-default
+include /components/button/btn-gradient
+include /components/msg
 
 mixin chat({ className })
   .chat(class=className)
     .chat__content-wrp
       .chat__content
-        .chat__msg.incoming
-          .chat__pic
-            img(src="/img/userpic-frank.png")
-          div
-            .chat__msg-top
-              .chat__name Фрэнк Ансвер
-              .chat__spec HR-специалист
-            .chat__bubble Сталкиваетесь ли вы с нехваткой технических или организационных ресурсов для выполнения своей работы?
-        .chat__msg.outgoing
-          .chat__pic
-            img(src="/img/userpic-riley.png")
-          div
-            .chat__msg-top
-              .chat__name Ваш ответ
-            .chat__answer-list
-              button.chat__answer.dark Да
-              button.chat__answer Нет
+        +msg({
+          img: brand !== "" ? "/img/userpic-frank-3d.png" : "/img/userpic-frank.png",
+          name: "Фрэнк Ансвер",
+          spec: "HR-специалист",
+          list: [
+            {
+              text: "Сталкиваетесь ли вы с нехваткой технических или организационных ресурсов для выполнения своей работы?",
+              type: "text"
+            }
+          ]
+        })
+        +msg({
+          type: "out",
+          img: brand !== "" ? "/img/userpic-riley-3d.png" : "/img/userpic-jully.png",
+          name: "Ваш ответ",
+          list: [
+            {
+              type: "answer"
+            }
+          ]
+        })
     .chat__bottom
       .chat__progress
         | Номер вопроса
         .chat__steps 4 из 8
-      +btn-default({ text: "Следующий вопрос" })
+      if brand !== ""
+        +btn-default({ text: "Следующий вопрос" })
+      else
+        +btn-gradient({ text: "Следующий вопрос" })

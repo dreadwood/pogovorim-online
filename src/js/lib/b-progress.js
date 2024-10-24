@@ -26,7 +26,7 @@
           forceToAxis: true
         },
         initialSlide,
-        spaceBetween: 16,
+        spaceBetween: 12,
         grabCursor: true,
         slidesPerView: 'auto',
         freeMode: {
@@ -39,7 +39,7 @@
           nextEl: nextEl
         },
         breakpoints: {
-          540: {
+          768: {
             spaceBetween: 30
           }
         }

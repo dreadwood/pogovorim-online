@@ -2,7 +2,7 @@ include /elements/head
 include /elements/images
 
 - let title = ""
-- let logo = ""
+- let brand = ""
 
 block data
 
@@ -10,18 +10,25 @@ doctype html
 html(lang="ru")
   +head({ title })
   body
-    .page(class=logo)
-      .page__row
-        if logo === "tbank"
-          a.page__logo.tinkoff(href="/")
-            +svg({ name: "/img/logo-tbank.svg" })
-        if logo === "megafon"
-          a.page__logo.megafon(href="/")
-            +svg({ name: "/img/logo-megafon.svg" })
-      .page__content
-        block content
-      .page__row
-        a.page__logo.pogovorim(href="#")
-          +svg({ name: "/img/logo-pogovorim.svg" })
+    .page(class=brand)
+      .page__wrp
+        .page__head
+          if brand === "tbank"
+            a.page__logo.tinkoff(href="/")
+              +svg({ name: "/img/logo-tbank.svg" })
+          else if brand === "megafon"
+            a.page__logo.megafon(href="/")
+              +svg({ name: "/img/logo-megafon.svg" })
+          else
+            a.page__logo(href="/")
+              +svg({ name: "/img/logo-pogovorim.svg" })
+        .page__content
+          block content
+        .page__bottom
+          if brand !== ""
+            a.page__logo(href="#")
+              +svg({ name: "/img/logo-pogovorim-2.svg" })
+          else
+            a.page__link(href="#") Политика конфиденциальности
     block modal
     include /elements/script

@@ -1,0 +1,18 @@
+mixin msg({ img, name, spec, type, list, className })
+  .msg(class=type || "in" class=className)
+    .msg__pic
+      img(src=img)
+    if name || spec
+      .msg__top
+        .msg__name=name
+        if spec
+          .msg__spec=spec
+    .msg__list
+      each it in list
+        if it.type === "text"
+          .msg__bubble=it.text
+        if it.type === "answer"
+          .msg__answer-list
+            button.msg__answer.accent Да
+            button.msg__answer Нет
+

@@ -1,0 +1,54 @@
+.b-form {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 73rem;
+}
+.b-form__fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  &:not(:first-child) {
+    margin-top: 5.6rem;
+  }
+}
+.b-form__fieldset-title {
+  margin-bottom: 2.4rem;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  font-weight: 500;
+  color: $color-gray-020;
+}
+.b-form__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem 1.6rem;
+  @include mobile-big {
+    grid-template-columns: auto;
+  }
+}
+.b-form__el-radio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2.4rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.b-form__select {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  grid-column: 1 / 3;
+  gap: 1.6rem;
+  @include mobile-big {
+    grid-column: auto;
+  }
+}
+.b-form__submit {
+  width: max-content;
+  margin: 8rem auto 0 auto;
+  @include mobile-big {
+    margin-top: 4rem;
+  }
+}

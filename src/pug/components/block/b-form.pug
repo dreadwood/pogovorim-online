@@ -1,0 +1,58 @@
+include /components/button/btn-gradient
+include /components/form/f-field
+include /components/form/f-radio
+include /components/form/f-select
+
+mixin b-form({})
+  -
+    let selectItems = [
+      {
+        text: "Отдел рекламы и маркетинга",
+        value: "1"
+      },
+      {
+        text: "Туризм и сфера обслуживания",
+        value: "2"
+      },
+      {
+        text: "Производство и технический надзор",
+        value: "3"
+      },
+      {
+        text: "Отдел рейкрутинга и управления персонала",
+        value: "4"
+      },
+      {
+        text: "Аналитика",
+        value: "5"
+      },
+      {
+        text: "Финансы",
+        value: "6"
+      },
+      {
+        text: "Бухгалтерия",
+        value: "7"
+      }
+    ]
+  form.b-form
+    fieldset.b-form__fieldset
+      legend.b-form__fieldset-title Персональные данные
+      .b-form__grid.personal
+        +f-field({ label: "Фамилия", name: "lastName" })
+        +f-field({ label: "Имя", name: "firstName" })
+        +f-field({ label: "Отчество", name: "patronymic" })
+        .b-form__select
+          .b-form__el-radio
+            +f-radio({ text: "Муж.", name: "gender", value: "male", isChecked: false })
+            +f-radio({ text: "Жен.", name: "gender", value: "female", isChecked: false })
+          +f-field({ label: "Возраст", name: "age", type: "number" })
+        +f-field({ label: "Email", name: "email" })
+    fieldset.b-form__fieldset
+      legend.b-form__fieldset-title Персональные данные
+      .b-form__grid.work
+        .b-form__select
+          +f-select({ values: selectItems, name: "workActivity" })
+        +f-field({ label: "Стаж работы в компании", name: "workExperience" })
+    .b-form__submit
+      +btn-gradient({ type: "submit", text: "Пройти опрос" })

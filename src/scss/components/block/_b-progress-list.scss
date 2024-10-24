@@ -21,13 +21,11 @@
     );
   }
   @include tablet {
-    &::before,
     &::after {
       width: 12rem;
     }
   }
-  @include mobile {
-    &::before,
+  @include mobile-big {
     &::after {
       display: none;
       width: 6rem;
@@ -44,14 +42,8 @@
 .b-progress-list__item {
   flex-shrink: 0;
   width: 29.5rem;
-  // &:not(:last-child) {
-  //   margin-right: 2rem;
-  // }
-  &:last-child {
-    // margin-right: 0 !important;
-  }
   @include mobile {
-    width: 24rem;
+    width: 25rem;
   }
 }
 .b-progress-list__controls {
@@ -63,7 +55,7 @@
   align-content: center;
   gap: 0.8rem;
   translate: 0 -50%;
-  @include mobile {
+  @include mobile-big {
     display: none;
   }
 }

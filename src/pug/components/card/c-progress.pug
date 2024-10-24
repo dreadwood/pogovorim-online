@@ -1,9 +1,9 @@
 include /components/button/btn-text-icon
 
-mixin c-progress({ label, name, count, isDone, isCurrent, className })
+mixin c-progress({ label, name, count, isDone, isActv, className })
   arrticle.c-progress(
     class=isDone && "done"
-    class=isCurrent && "current"
+    class=isActv && "actv"
     class=className
   )
     .c-progress__status

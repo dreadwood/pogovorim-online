@@ -1,0 +1,11 @@
+mixin f-select({ isShow, name, values, isRequired, className })
+  .f-select.js-select.empty(class=isShow && "show" class=className)
+    input.js-select-input(type="hidden" required=isRequired name=name)
+    button.f-select__btn.js-select-btn(type="button")
+      span.js-select-value Выберите подразделение
+      +svg({ name: "arrow-back-small", width: 20, height: 20 })
+    .f-select__drop.js-select-drop
+      each it in values || []
+        button.f-select__item.js-select-item(
+          data-input-value=it.value
+        )=it.text

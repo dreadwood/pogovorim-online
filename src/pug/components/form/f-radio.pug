@@ -1,0 +1,14 @@
+mixin f-radio({ name, value, isChecked, text, isDisabled, isRequired, className })
+  label.f-radio(class=className)
+    input.visually-hidden(
+      type="radio"
+      name=name
+      id=name
+      checked=isChecked
+      disabled=isDisabled
+      required=isRequired
+      value=value
+    )
+    .f-radio__icon
+    if text
+      span=text

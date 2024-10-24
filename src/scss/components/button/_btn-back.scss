@@ -19,6 +19,9 @@
   &:focus-visible {
     color: $color-black;
   }
+  @include desktop-big {
+    font-size: 0;
+  }
 }
 .btn-back__icon {
   @include transition(background-color);

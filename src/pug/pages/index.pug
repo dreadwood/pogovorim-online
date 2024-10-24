@@ -4,12 +4,16 @@ block data
   -
     title = "Поговорим"
 
-    let pagesPogovorim = [
-      { name: "Поговорим Старт (Т-Банк)", url: "start-tbank-page.html" },
-      { name: "Поговорим Чат (Т-Банк)", url: "chat-tbank-page.html" },
-      { name: "Поговорим Старт (Мегафон)", url: "start-megafon-page.html" },
-      { name: "Поговорим Чат (Мегафон)", url: "chat-megafon-page.html" },
+    let pagesDefault = [
+      { name: "Анкета (основа)", url: "form-page.html" },
+      { name: "Чат (основа)", url: "chat-page.html" },
       { name: "UI", url: "ui-page.html" }
+    ]
+    let pagesBrand = [
+      { name: "Старт (Т-Банк)", url: "start-tbank-page.html" },
+      { name: "Чат (Т-Банк)", url: "chat-tbank-page.html" },
+      { name: "Старт (Мегафон)", url: "start-megafon-page.html" },
+      { name: "Чат (Мегафон)", url: "chat-megafon-page.html" },
     ]
 
 
@@ -59,4 +63,5 @@ block content
   h1=title
 
   h2 Pages
-  +page-list({ list: pagesPogovorim })
+  +page-list({ list: pagesDefault })
+  +page-list({ list: pagesBrand })

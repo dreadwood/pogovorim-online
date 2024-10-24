@@ -10,7 +10,7 @@ mixin c-block({ progressPercent, progressSteps, isDone, category, labelText, car
         .c-block__percent #{progressPercent}%
         .c-block__steps=progressSteps
       .c-block__count
-        +svg({ name: "graph" })
+        +svg({ name: "graph-fill" })
         span=category
     .c-block__content
       .c-block__label=labelText
@@ -27,5 +27,5 @@ mixin c-block({ progressPercent, progressSteps, isDone, category, labelText, car
         +btn-default({
           text: btnText,
           isDisabled: isBtnDisabled,
-          className: logo === "megafon" && "rounded"
+          className: brand === "megafon" && "rounded"
         })
