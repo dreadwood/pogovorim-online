@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta name="robots" content="noindex, nofollow"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Поговорим. Анкета</title>
+    <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml"/>
+    <link rel="icon" href="/favicon/favicon.png" type="image/png"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+  </head>
+  <body>
+    <div class="page">
+      <div class="page__wrp">
+        <div class="page__head"><a class="page__logo" href="/"><img src="/img/logo-pogovorim.svg" alt=""/></a>
+        </div>
+        <div class="page__content">
+          <div class="page__center">
+            <form class="b-form">
+              <fieldset class="b-form__fieldset">
+                <legend class="b-form__fieldset-title">Персональные данные</legend>
+                <div class="b-form__grid personal">
+                  <div class="f-field">
+                    <input class="f-field__input" type="text" id="lastName" name="lastName" placeholder=""/>
+                    <label class="f-field__label" for="lastName">Фамилия</label>
+                  </div>
+                  <div class="f-field">
+                    <input class="f-field__input" type="text" id="firstName" name="firstName" placeholder=""/>
+                    <label class="f-field__label" for="firstName">Имя</label>
+                  </div>
+                  <div class="f-field">
+                    <input class="f-field__input" type="text" id="patronymic" name="patronymic" placeholder=""/>
+                    <label class="f-field__label" for="patronymic">Отчество</label>
+                  </div>
+                  <div class="b-form__select">
+                    <div class="b-form__el-radio">
+                      <label class="f-radio">
+                        <input class="visually-hidden" type="radio" name="gender" id="gender" value="male"/>
+                        <div class="f-radio__icon"></div><span>Муж.</span>
+                      </label>
+                      <label class="f-radio">
+                        <input class="visually-hidden" type="radio" name="gender" id="gender" value="female"/>
+                        <div class="f-radio__icon"></div><span>Жен.</span>
+                      </label>
+                    </div>
+                    <div class="f-field">
+                      <input class="f-field__input" type="number" id="age" name="age" placeholder=""/>
+                      <label class="f-field__label" for="age">Возраст</label>
+                    </div>
+                  </div>
+                  <div class="f-field">
+                    <input class="f-field__input" type="text" id="email" name="email" placeholder=""/>
+                    <label class="f-field__label" for="email">Email</label>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="b-form__fieldset">
+                <legend class="b-form__fieldset-title">Персональные данные</legend>
+                <div class="b-form__grid work">
+                  <div class="b-form__select">
+                    <div class="f-select js-select empty">
+                      <input class="js-select-input" type="hidden" name="workActivity"/>
+                      <button class="f-select__btn js-select-btn" type="button"><span class="js-select-value">Выберите подразделение</span>
+                        <svg width="20" height="20">
+                          <use xlink:href="/img/sprite.svg#arrow-back-small"></use>
+                        </svg>
+                      </button>
+                      <div class="f-select__drop js-select-drop">
+                        <button class="f-select__item js-select-item" data-input-value="1">Отдел рекламы и маркетинга</button>
+                        <button class="f-select__item js-select-item" data-input-value="2">Туризм и сфера обслуживания</button>
+                        <button class="f-select__item js-select-item" data-input-value="3">Производство и технический надзор</button>
+                        <button class="f-select__item js-select-item" data-input-value="4">Отдел рейкрутинга и управления персонала</button>
+                        <button class="f-select__item js-select-item" data-input-value="5">Аналитика</button>
+                        <button class="f-select__item js-select-item" data-input-value="6">Финансы</button>
+                        <button class="f-select__item js-select-item" data-input-value="7">Бухгалтерия</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="f-field">
+                    <input class="f-field__input" type="text" id="workExperience" name="workExperience" placeholder=""/>
+                    <label class="f-field__label" for="workExperience">Стаж работы в компании</label>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="b-form__submit">
+                <button class="btn-gradient" type="submit"><span>Пройти опрос</span></button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="page__bottom"><a class="page__link" href="#">Политика конфиденциальности</a>
+        </div>
+      </div>
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/lib.js"></script>
+  </body>
+</html>
