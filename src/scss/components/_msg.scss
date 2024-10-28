@@ -23,6 +23,11 @@
       grid-column: 1 / 2;
     }
   }
+  &.single {
+    .msg__bubble {
+      background-color: $color-white;
+    }
+  }
   @include tablet {
     gap: 1.2rem 0.8rem;
     &.out {
@@ -30,6 +35,14 @@
       .msg__list {
         grid-column: 1 / 3;
       }
+    }
+  }
+  @include mobile-big {
+    .msg__pic {
+      grid-row: 1 / 2;
+    }
+    .msg__top {
+      grid-row: 1 / 2;
     }
   }
 }

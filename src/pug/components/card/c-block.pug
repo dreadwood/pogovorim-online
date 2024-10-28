@@ -1,4 +1,5 @@
 include /components/button/btn-text-icon
+include /components/button/btn-curve
 include /components/button/btn-default
 
 mixin c-block({ progressPercent, progressSteps, isDone, category, labelText, cardTitle, cardText, btnText, isBtnDisabled, className })
@@ -10,22 +11,30 @@ mixin c-block({ progressPercent, progressSteps, isDone, category, labelText, car
         .c-block__percent #{progressPercent}%
         .c-block__steps=progressSteps
       .c-block__count
-        +svg({ name: "graph-fill" })
+        if brand !== ""
+          +svg({ name: "graph-fill", width: 32, height: 32 })
+        else
+          +svg({ name: "graph", width: 32, height: 32 })
         span=category
     .c-block__content
       .c-block__label=labelText
       .c-block__title=cardTitle
       .c-block__text=cardText
-    .c-block__btn
-      if isDone
-        +btn-text-icon({
-          icon: "pen",
-          text: btnText,
-          isDisabled: isBtnDisabled
-        })
+    if isDone
+      if brand !== ""
+        .c-block__btn
+          +btn-text-icon({ icon: "pen", text: btnText })
       else
-        +btn-default({
-          text: btnText,
-          isDisabled: isBtnDisabled,
-          className: brand === "megafon" && "rounded"
-        })
+        .c-block__btn-curve
+          +btn-curve({ type1: "edit" })
+    else
+      if brand !== ""
+        .c-block__btn
+          +btn-default({
+            text: btnText,
+            isDisabled: isBtnDisabled,
+            className: brand === "megafon" && "rounded"
+          })
+      else
+        .c-block__btn-curve
+          +btn-curve({ isDisabled: isBtnDisabled })

@@ -1,13 +1,28 @@
 extends /elements/layout-page
 include /components/block/b-form
+include /components/msg
 
 block data
   - title = "Поговорим. Анкета"
   - brand = ""
 
 block content
-  .page__center
-    +b-form({})
+  .page__form
+    .page__form-msg
+      +msg({
+        img: "/img/userpic-frank.png",
+        name: "Фрэнк Ансвер",
+        spec: "HR-специалист",
+        list: [
+          {
+            text: "Прежде чем начать проходить опрос, давайте заполним небольшую анкету!",
+            type: "text"
+          }
+        ],
+        className: "single"
+      })
+    .page__form-fields
+      +b-form({})
 
 
 block modal

@@ -54,7 +54,7 @@
   svg {
     flex-shrink: 0;
     width: 1.6rem;
-    fill: var(--icon-pie-fill, #{$color-brilliant-greenish-yellow});
+    fill: var(--c-progress-icon-pie, #{$color-green-jungle-crayola});
     aspect-ratio: 1 / 1;
   }
 }

@@ -1,0 +1,10 @@
+mixin btn-curve({ type1, isDisabled, className })
+  button.btn-curve(class=type1 class=className disabled=isDisabled)
+    .btn-curve__bg
+      +svg({ name: "btn-curve", width: 42, height: 101 })
+    if type1 === "edit"
+      .btn-curve__icon
+        +svg({ name: "pen", width: 16, height: 16 })
+    else
+      .btn-curve__icon
+        +svg({ name: "arrow-next-small", width: 20, height: 20 })

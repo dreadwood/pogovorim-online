@@ -1,0 +1,15 @@
+extends /elements/layout-page
+include /components/card/c-block
+
+block data
+  - title = "Поговорим. Старт"
+  - brand = ""
+
+block content
+  .page__center
+    .b-block-list
+      include /data/cards-block
+      each it in cardsBlock
+        +c-block(it)
+
+block modal

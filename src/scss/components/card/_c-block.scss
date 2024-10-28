@@ -10,10 +10,10 @@
       display: block;
     }
     .c-block__chart {
-      --c: var(--chart-fill, #{$color-crayola-fern});
+      --c: var(--c-block-chart-done-bg, #{$color-green-jungle-crayola});
     }
     .c-block__percent {
-      color: $color-crayola-fern;
+      color: var(--c-block-percent-color, #{$color-green-jungle-crayola});
     }
   }
   @include mobile-big {
@@ -27,7 +27,7 @@
   display: none;
   width: calc(100% - 2.4rem * 2);
   height: 0.2rem;
-  background-color: var(--status-bg, #{$color-crayola-fern});
+  background-color: var(--c-block-status-bg, #{$color-green-jungle-crayola});
   border-radius: 0 0 0.2rem 0.2rem;
 }
 .c-block__top {
@@ -48,7 +48,7 @@
 .c-block__chart {
   --p: 20;
   --b: 0.4rem;
-  --c: var(--chart-fill, #{$color-brilliant-greenish-yellow});
+  --c: var(--c-block-chart-bg, #{$color-green-jungle-crayola});
   position: absolute;
   inset: 0;
   animation: pie-animation 1s 0.5s both;
@@ -105,7 +105,7 @@
   svg {
     width: 3.2rem;
     height: 3.2rem;
-    fill: var(--icon-pie-fill, #{$color-brilliant-greenish-yellow});
+    fill: var(--c-block-icon-pie, #{$color-green-jungle-crayola});
   }
 }
 .c-block__content {
@@ -121,9 +121,9 @@
   padding: 0.6rem 0.8rem;
   font-size: 1.2rem;
   line-height: 1;
-  color: var(--label-color, #{$color-manatee});
-  background-color: var(--label-bg, #{$color-gridperlevy});
-  border-radius: var(--label-radius, 1.2rem);
+  color: var(--c-block-label-color, #{$color-manatee});
+  background-color: var(--c-block-label-bg, #{$color-gridperlevy});
+  border-radius: var(--c-block-label-radius, 1.2rem);
 }
 .c-block__title {
   @include text-truncate-multiline(2);
@@ -142,6 +142,11 @@
   @include tablet {
     margin-top: 1.6rem;
   }
+}
+.c-block__btn-curve {
+  position: absolute;
+  right: 0;
+  bottom: 3.1rem;
 }
 .c-block__btn {
   margin-top: auto;
