@@ -446,14 +446,13 @@ input[type=file].visually-hidden {
 .b-chat-top__category svg {
   flex-shrink: 0;
   width: 1.6rem;
-  fill: var(--icon-pie-fill, #ffdd2d);
+  fill: var(--c-progress-icon-pie, #3eb0a1);
   aspect-ratio: 1/1;
 }
 
 .b-form {
   flex-shrink: 0;
   width: 100%;
-  max-width: 73rem;
 }
 
 .b-form__fieldset {
@@ -652,6 +651,57 @@ input[type=file].visually-hidden {
   aspect-ratio: 1/1;
 }
 
+.btn-curve {
+  position: relative;
+  display: block;
+  display: grid;
+  place-items: center;
+  width: 4.2rem;
+  height: 10.1rem;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+.btn-curve.edit .btn-curve__bg {
+  color: #eef9f9;
+}
+.btn-curve.edit .btn-curve__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: #3eb0a1;
+}
+.btn-curve[disabled] .btn-curve__bg {
+  color: #eef9f9;
+}
+.btn-curve[disabled] .btn-curve__icon {
+  color: #c1c0cd;
+}
+
+.btn-curve__bg {
+  width: 100%;
+  height: 100%;
+  color: #3eb0a1;
+}
+.btn-curve__bg svg {
+  width: 100%;
+  height: 100%;
+  fill: currentcolor;
+}
+
+.btn-curve__icon {
+  position: absolute;
+  top: calc(50% + 0.2rem);
+  left: 50%;
+  width: 2rem;
+  height: 2rem;
+  color: #ffffff;
+  translate: -50% -50%;
+}
+.btn-curve__icon svg {
+  fill: currentcolor;
+}
+
 .btn-default {
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
@@ -829,7 +879,7 @@ input[type=file].visually-hidden {
 .btn-text-icon svg {
   aspect-ratio: 1/1;
   width: 1.6rem;
-  fill: var(--btn-text-icon, #ffdd2d);
+  fill: var(--btn-text-icon, #3eb0a1);
 }
 .btn-text-icon[disabled] {
   color: #8e9aa7;
@@ -854,10 +904,10 @@ input[type=file].visually-hidden {
   display: block;
 }
 .c-block.done .c-block__chart {
-  --c: var(--chart-fill, #65be74);
+  --c: var(--c-block-chart-done-bg, #3eb0a1);
 }
 .c-block.done .c-block__percent {
-  color: #65be74;
+  color: var(--c-block-percent-color, #3eb0a1);
 }
 @media (max-width: 767px) {
   .c-block {
@@ -872,7 +922,7 @@ input[type=file].visually-hidden {
   display: none;
   width: calc(100% - 4.8rem);
   height: 0.2rem;
-  background-color: var(--status-bg, #65be74);
+  background-color: var(--c-block-status-bg, #3eb0a1);
   border-radius: 0 0 0.2rem 0.2rem;
 }
 
@@ -896,7 +946,7 @@ input[type=file].visually-hidden {
 .c-block__chart {
   --p: 20;
   --b: 0.4rem;
-  --c: var(--chart-fill, #ffdd2d);
+  --c: var(--c-block-chart-bg, #3eb0a1);
   position: absolute;
   inset: 0;
   animation: pie-animation 1s 0.5s both;
@@ -952,7 +1002,7 @@ input[type=file].visually-hidden {
 .c-block__count svg {
   width: 3.2rem;
   height: 3.2rem;
-  fill: var(--icon-pie-fill, #ffdd2d);
+  fill: var(--c-block-icon-pie, #3eb0a1);
 }
 
 .c-block__content {
@@ -972,9 +1022,9 @@ input[type=file].visually-hidden {
   padding: 0.6rem 0.8rem;
   font-size: 1.2rem;
   line-height: 1;
-  color: var(--label-color, #8e9aa7);
-  background-color: var(--label-bg, #f6f7f8);
-  border-radius: var(--label-radius, 1.2rem);
+  color: var(--c-block-label-color, #8e9aa7);
+  background-color: var(--c-block-label-bg, #f6f7f8);
+  border-radius: var(--c-block-label-radius, 1.2rem);
 }
 
 .c-block__title {
@@ -1002,6 +1052,12 @@ input[type=file].visually-hidden {
   .c-block__text {
     margin-top: 1.6rem;
   }
+}
+
+.c-block__btn-curve {
+  position: absolute;
+  right: 0;
+  bottom: 3.1rem;
 }
 
 .c-block__btn {
@@ -1422,6 +1478,9 @@ input[type=file].visually-hidden {
 .msg.out .msg__list {
   grid-column: 1/2;
 }
+.msg.single .msg__bubble {
+  background-color: #ffffff;
+}
 @media (max-width: 1023px) {
   .msg {
     gap: 1.2rem 0.8rem;
@@ -1432,6 +1491,14 @@ input[type=file].visually-hidden {
   }
   .msg.out .msg__list {
     grid-column: 1/3;
+  }
+}
+@media (max-width: 767px) {
+  .msg .msg__pic {
+    grid-row: 1/2;
+  }
+  .msg .msg__top {
+    grid-row: 1/2;
   }
 }
 
@@ -1599,6 +1666,13 @@ input[type=file].visually-hidden {
   --page-bg: #f6f7f8;
   --btn-default-color: #333333;
   --btn-default-bg: #ffdd2d;
+  --btn-text-icon: #ffdd2d;
+  --c-block-status-bg: #65be74;
+  --c-block-chart-bg: #ffdd2d;
+  --c-block-chart-done-bg: #65be74;
+  --c-block-percent-color: #65be74;
+  --c-block-icon-pie: #ffdd2d;
+  --c-progress-icon-pie: #ffdd2d;
   --c-progress-done-bg: #65be74;
   --c-progress-label-done-bg: #77d186;
   --c-progress-label-actv-bg: #333333;
@@ -1613,6 +1687,16 @@ input[type=file].visually-hidden {
   --page-bg: #f6f7f8;
   --btn-default-color: #ffffff;
   --btn-default-bg: #00b956;
+  --btn-text-icon: #00b956;
+  --c-block-status-bg: #00b956;
+  --c-block-chart-bg: #65be74;
+  --c-block-chart-done-bg: #65be74;
+  --c-block-percent-color: #65be74;
+  --c-block-icon-pie: #00b956;
+  --c-block-label-color: #ffffff;
+  --c-block-label-bg: #731982;
+  --c-block-label-radius: 0.2rem;
+  --c-progress-icon-pie: #00b956;
   --c-progress-done-bg: #00b956;
   --c-progress-label-done-bg: #0dc161;
   --c-progress-label-actv-bg: #731982;
@@ -1622,13 +1706,11 @@ input[type=file].visually-hidden {
   --msg-bubble-bg: #f6f7f8;
   --msg-bubble-accent-color: #ffffff;
   --msg-bubble-accent-bg: #731982;
-  --status-bg: #00b956;
-  --chart-fill: #00b956;
-  --icon-pie-fill: #00b956;
-  --btn-text-icon: #00b956;
-  --label-color: #ffffff;
-  --label-bg: #731982;
-  --label-radius: 0.2rem;
+}
+@media (max-width: 767px) {
+  .page {
+    height: auto;
+  }
 }
 
 .page__wrp {
@@ -1699,6 +1781,9 @@ input[type=file].visually-hidden {
   align-items: center;
   height: 100%;
 }
+.page__center > * {
+  margin-bottom: 2.2rem;
+}
 
 .page__chat-top {
   margin-top: 5.185vh;
@@ -1718,7 +1803,7 @@ input[type=file].visually-hidden {
 .page__chat-progress {
   margin-top: 4.259vh;
 }
-@media (max-width: 539px) {
+@media (max-width: 767px) {
   .page__chat-progress {
     margin-top: 2.4rem;
   }
@@ -1727,9 +1812,36 @@ input[type=file].visually-hidden {
 .page__chat-content {
   margin-top: 4.259vh;
 }
-@media (max-width: 539px) {
+@media (max-width: 767px) {
   .page__chat-content {
     margin-top: 2.4rem;
+  }
+}
+
+.page__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  max-width: 73rem;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .page__form {
+    padding: 0 1.8rem;
+  }
+}
+
+.page__form-msg {
+  width: 100%;
+}
+
+.page__form-fields {
+  margin-top: 5.6rem;
+}
+@media (max-width: 767px) {
+  .page__form-fields {
+    margin-top: 4rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
